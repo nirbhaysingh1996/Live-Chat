@@ -1,0 +1,33 @@
+/{
+#include<stdio.h>
+/}
+//
+[a-z A-Z]+
+//
+main()
+{
+yylex();
+yyin=fopen("abc.txt","r");
+yyout=fopen("xyz.txt","w");}
+
+
+
+/{
+#include<stdio.h>
+int a=0;
+/}
+//
+[a-z A-Z]+
+{
+if(yyleng>a)
+{
+a=yyleng;
+}
+}
+int main()
+{
+yyin = fopen("abc.txt","r");
+yylex();
+printf("largest : %d",a);
+printf("\n");
+return 0;
